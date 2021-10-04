@@ -7,3 +7,7 @@ class codewars_kata_tests(unittest.TestCase):
 		#Act
 
 		#self.assertEqual()
+
+
+
+# python -m unittest discover . test.py
