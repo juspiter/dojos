@@ -6,7 +6,7 @@ def truncate(valor):
 def calcular_comissao(valor):
 	if valor < 10000:
 		return truncate(valor * 0.05)
-	return truncate(valor * 0.06)
+	#return truncate(valor * 0.06)
 
 
 
