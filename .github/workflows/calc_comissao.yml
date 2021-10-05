@@ -1,0 +1,14 @@
+name: calc_comissao_unittest
+on: [push]
+jobs:
+  check-bats-version:
+    runs-on: ubuntu-latest
+    defaults:
+      - run:
+          working-directory: sistema_vendas
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v1
+        with:
+          python-version: 3.8.5
+      - run: python3 -m unittest discover . test.py
