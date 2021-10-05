@@ -4,7 +4,7 @@ jobs:
   check-bats-version:
     runs-on: ubuntu-latest
     defaults:
-      - run:
+      run:
           working-directory: sistema_vendas
     steps:
       - uses: actions/checkout@v2
