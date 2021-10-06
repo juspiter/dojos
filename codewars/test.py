@@ -21,13 +21,6 @@ from pagination import PaginationHelper
 # Natasha
 
 class pagination_helper_tests(unittest.TestCase):
-	# def teste_traz_uma_lista_com_itens_e_uma_int(self):
-	# 	#Arrange
-	# 	collection = range(1,25)
-	# 	helper = PaginationHelper(collection, 10)
-	# 	#Act
-
-	# 	#self.assertEqual()
 
 	def test_item_count_two_expected_two(self):
 		#Arrange
@@ -153,6 +146,78 @@ class pagination_helper_tests(unittest.TestCase):
 		helper = PaginationHelper(collection, 7)
 		#Act
 		result = helper.page_item_count(-5)
+		self.assertEqual(result, expected)
+
+	def test_page_item_index_0(self):	
+		#Arrange
+		expected = 0
+		collection = range(1, 25)
+		helper = PaginationHelper(collection, 7)
+		#Act
+		result = helper.page_index(0)
+		self.assertEqual(result, expected)
+
+	def test_page_item_index_7_expect_1(self):	
+		#Arrange
+		expected = 1
+		collection = range(1, 25)
+		helper = PaginationHelper(collection, 7)
+		#Act
+		result = helper.page_index(7)
+		self.assertEqual(result, expected)
+		
+	def test_page_item_index_14_expect_2(self):	
+		#Arrange
+		expected = 2
+		collection = range(1, 25)
+		helper = PaginationHelper(collection, 7)
+		#Act
+		result = helper.page_index(14)
+		self.assertEqual(result, expected)
+
+	def test_page_item_index_15_expect_2(self):	
+		#Arrange
+		expected = 2
+		collection = range(1, 25)
+		helper = PaginationHelper(collection, 7)
+		#Act
+		result = helper.page_index(15)
+		self.assertEqual(result, expected)
+
+	def test_page_item_index_0_expect_0(self):	
+		#Arrange
+		expected = 0
+		collection = range(1, 25)
+		helper = PaginationHelper(collection, 7)
+		#Act
+		result = helper.page_index(0)
+		self.assertEqual(result, expected)
+
+	def test_page_item_index_24_expect_minus1(self):	
+		#Arrange
+		expected = -1
+		collection = range(1, 25)
+		helper = PaginationHelper(collection, 7)
+		#Act
+		result = helper.page_index(24)
+		self.assertEqual(result, expected)
+
+	def test_page_item_index_28_expect_minus1(self):	
+		#Arrange
+		expected = -1
+		collection = range(1, 25)
+		helper = PaginationHelper(collection, 7)
+		#Act
+		result = helper.page_index(28)
+		self.assertEqual(result, expected)
+	
+	def test_page_item_index_minus1_expect_minus1(self):	
+		#Arrange
+		expected = -1
+		collection = range(1, 25)
+		helper = PaginationHelper(collection, 7)
+		#Act
+		result = helper.page_index(-1)
 		self.assertEqual(result, expected)
 
 

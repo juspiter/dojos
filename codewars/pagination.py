@@ -21,7 +21,7 @@ class PaginationHelper:
 
 	# returns the number of items on the current page. page_index is zero based
 	# this method should return -1 for page_index values that are out of range
-	def page_item_count(self, page_index): #retornar quantos itens tem na page informada
+	def page_item_count(self, page_index):
 		if page_index >= self.page_count() or page_index < 0:
 			return -1
 		elif page_index + 1 < self.page_count():
@@ -31,5 +31,7 @@ class PaginationHelper:
 
 	# determines what page an item is on. Zero based indexes.
 	# this method should return -1 for item_index values that are out of range
-	def page_index(self, item_index): #retorna qual pagina está o item 
-		pass
+	def page_index(self, item_index):
+		if item_index >= self.item_count() or item_index < 0:
+			return -1
+		return math.floor(item_index / self.items_page)
